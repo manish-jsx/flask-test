@@ -1,0 +1,43 @@
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+s3api-env/
+
+# Flask instance folder (if used)
+instance/
+
+# Compiled Python files
+*.pyo
+*.pyd
+
+# Editor/IDE specific files
+.vscode/
+
+
+# Log files
+*.log
+
+# Environment-specific configuration files
+.env
+
+# Database files
+*.sqlite
+
+# Web assets
+webassets-manifest/
+
+# Compiled files
+*.pyc
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyo
+*.pyc
+*.pyd
+
+# Local configuration file
+instance/config.py
