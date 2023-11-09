@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <h1 class="title is-4">My Website</h1>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    {% if user_authenticated %}
+                    <a class="button is-info" href="#">Dashboard</a>
+                    <a class="button is-danger" href="#">Logout</a>
+                    {% else %}
+                    <a class="button is-primary" href="#">Register</a>
+                    <a class="button is-light" href="#" onclick="showLoginModal()">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Main Page Content Goes Here -->
+            <h1 class="title is-2">Welcome to My Website</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <!-- Include your login template here -->
+            {% include 'login.html' %}
+            <!-- For example, you can use an iframe to load a separate login page -->
+            
+        </div>
+        <button class="modal-close is-large" aria-label="close" onclick="hideLoginModal()"></button>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div class="modal" id="dashboard-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <!-- Include your dashboard template here -->
+            {% include 'dashboard.html' %}
+            
+        </div>
+        <button class="modal-close is-large" aria-label="close" onclick="hideDashboardModal()"></button>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="register-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <!-- Include your register template here -->
+            {% include 'register.html' %}
+            <!-- For example, you can use an iframe to load a separate register page -->
+           
+        </div>
+        <button class="modal-close is-large" aria-label="close" onclick="hideRegisterModal()"></button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                &copy; 2023 My Website. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Your additional content goes here -->
+
+    <script>
+        function showLoginModal() {
+            document.getElementById('login-modal').classList.add('is-active');
+        }
+
+        function hideLoginModal() {
+            document.getElementById('login-modal').classList.remove('is-active');
+        }
+
+        function showDashboardModal() {
+            document.getElementById('dashboard-modal').classList.add('is-active');
+        }
+
+        function hideDashboardModal() {
+            document.getElementById('dashboard-modal').classList.remove('is-active');
+        }
+
+        function showRegisterModal() {
+            document.getElementById('register-modal').classList.add('is-active');
+        }
+
+        function hideRegisterModal() {
+            document.getElementById('register-modal').classList.remove('is-active');
+        }
+    </script>
+</body>
+
+</html>

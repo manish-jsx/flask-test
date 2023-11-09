@@ -22,7 +22,8 @@ s3 = boto3.client('s3', aws_access_key_id='YOUR_ACCESS_KEY', aws_secret_access_k
 
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    return "Hello, this is the root URL."
+
 
 def check_s3_credentials():
     # Check if AWS S3 credentials are valid

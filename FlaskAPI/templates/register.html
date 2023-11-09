@@ -2,13 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>User Registration and Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        .section {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 <body>
     <section class="section">
         <div class="container">
-            <h1 class="title has-text-centered">User Registration and Login</h1>
+            <h1 class="title has-text-centered">User Registration</h1>
 
             <!-- Registration Form -->
             <div class="box">
@@ -33,35 +40,9 @@
                     </div>
                 </form>
             </div>
-
-            <!-- Login Form -->
-            <div class="box">
-                <h2 class="title is-4">Login</h2>
-                <form id="login-form">
-                    <div class="field">
-                        <label class="label">Username</label>
-                        <div class="control">
-                            <input class="input" type="text" id="login-username" placeholder="Username">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Password</label>
-                        <div class="control">
-                            <input class="input" type="password" id="login-password" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="control">
-                            <button class="button is-primary" type="button" onclick="loginUser()">Login</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div id="response" class="has-text-centered"></div>
         </div>
     </section>
 
-    <script src="login.js"></script>
+    <script src="{{ url_for('static', filename='login.js') }}"></script>
 </body>
 </html>
