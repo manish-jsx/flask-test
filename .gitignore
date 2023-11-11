@@ -6,6 +6,7 @@ __pycache__/
 venv/
 env/
 s3api-env/
+flask-env/
 
 # Flask instance folder (if used)
 instance/
